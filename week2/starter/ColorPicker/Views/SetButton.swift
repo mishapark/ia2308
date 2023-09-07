@@ -43,11 +43,17 @@ struct SetButton: View {
     .padding(Constants.Button.padding)
     .background(.blue)
     .overlay {
-      RoundedRectangle(cornerRadius: Constants.Button.roundRectCornerRadius)
+      RoundedRectangle(cornerRadius: Constants.Button.roundCornerRadius)
         .strokeBorder(.white, lineWidth: Constants.Button.strokeBorder)
     }
-    .cornerRadius(Constants.Button.roundRectCornerRadius)
+    .cornerRadius(Constants.Button.roundCornerRadius)
     .bold()
     .foregroundColor(.white)
+  }
+}
+
+struct SetButton_Previews: PreviewProvider {
+  static var previews: some View {
+    SetButton(title: "Hello") {}
   }
 }

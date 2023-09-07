@@ -42,8 +42,8 @@ enum Constants {
   }
 
   enum Button {
-    public static let roundRectCornerRadius = CGFloat(20)
-    public static let strokeBorder = CGFloat(20)
+    public static let roundCornerRadius = CGFloat(20)
+    public static let strokeBorder = CGFloat(2)
     public static let padding = CGFloat(20)
   }
 
