@@ -36,9 +36,9 @@ struct PickedColor: View {
   @Binding var color: Color
 
   var body: some View {
-    RoundedRectangle(cornerRadius: 0)
-      .foregroundColor(color)
-      .border(.brown, width: 5)
+    Rectangle()
+      .fill(color)
+      .border(.brown, width: Constants.General.strokeWidth)
   }
 }
 

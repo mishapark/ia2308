@@ -42,7 +42,7 @@ struct ColorSlider: View {
     VStack {
       Text(title)
       HStack {
-        Slider(value: $value, in: 0 ... 255)
+        Slider(value: $value, in: 0 ... Constants.ColorPicker.colorCode)
           .accentColor(accentColor)
         Text("\(Int(value.rounded()))")
       }

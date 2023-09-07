@@ -44,7 +44,7 @@ struct ContentView: View {
 
   var body: some View {
     let verticalOrientation = verticalSizeClass == .regular && horizontalSizeClass == .compact
-    let layout = verticalOrientation ? AnyLayout(VStackLayout(spacing: 20)) : AnyLayout(HStackLayout(spacing: 20))
+    let layout = verticalOrientation ? AnyLayout(VStackLayout(spacing: Constants.General.spacing)) : AnyLayout(HStackLayout(spacing: Constants.General.spacing))
 
     ZStack {
       Color("BackgroundColor")
@@ -57,8 +57,8 @@ struct ContentView: View {
           PickedColor(color: $foregroundColor)
             .aspectRatio(
               verticalOrientation ?
-                CGSize(width: 1, height: 1) :
-                CGSize(width: 4, height: 3),
+              Constants.General.verticalAspectRatio :
+                Constants.General.horizontalAspectRatio,
               contentMode: .fit
             )
         }
@@ -71,12 +71,12 @@ struct ContentView: View {
           SetButton(title: "Set Color", action: setColor)
         }
       }
-      .padding(20)
+      .padding(Constants.General.padding)
     }
   }
 
   func setColor() {
-    foregroundColor = Color(red: redColor / 255, green: greenColor / 255, blue: blueColor / 255)
+    foregroundColor = Color(red: redColor / Constants.ColorPicker.colorCode, green: greenColor / Constants.ColorPicker.colorCode, blue: blueColor / Constants.ColorPicker.colorCode)
   }
 }
 
